@@ -1,0 +1,30 @@
+<section class="profile" *ngIf="user">
+    <div class="profile-wrapper" *ngIf="!editable; else editForm">
+        <span class="material-icons edit-icon" (click)="edit()">
+            edit
+        </span>
+        <img src="{{user.photoURL}}" alt="profile image" class="profile-img">
+        <label>Name: {{user.displayName | titlecase}}</label>
+        <label>Age: {{user.age ? user.age : 'Not set'}}</label>
+        <label>Email: {{user.email}}</label>
+        <button mat-raised-button class="sign-out-btn" (click)="auth.signOut()">Sign out</button>
+    </div>
+    <ng-template #editForm>
+        <div class="profile-wrapper">
+            <span class="material-icons edit-icon" (click)="edit()">
+                edit
+            </span>
+            <div class="edit-img-wrapper">
+                <img src="{{user.photoURL}}" alt="profile image" class="profile-img">
+                <label class="edit-img">
+                    <span class="material-icons edit-img-btn">
+                        edit
+                    </span>
+                    <input type="file" #fileInput accept="image/*" class="upload-file" (change)="changeImg()">
+                </label>
+            </div>
+            <button mat-raised-button class="sign-out-btn" (click)="auth.signOut()">Sign out</button>
+        </div>
+    </ng-template>
+</section>
+

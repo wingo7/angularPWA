@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angularpwa-254f3": {
+      "hosting": {
+        "pwa": [
+          "angularpwa-254f3"
+        ]
+      }
+    }
+  }
+}

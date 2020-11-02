@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@import './variables';
+html,
+body {
+  height: 100%;
+}
+body {
+  background: rgb(8, 58, 62);
+  background: linear-gradient(
+    0deg,
+    rgba(8, 58, 62, 1) 0%,
+    rgba(0, 57, 83, 1) 0%,
+    rgba(34, 102, 130, 1) 0%,
+    rgba(19, 110, 148, 1) 26%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-size: cover;
+  overflow: auto;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 0;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.login-form {
+  margin: 0 auto;
+  min-width: 150px;
+  max-width: 500px;
+  width: 90%;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.material-icons {
+  cursor: default;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label,
+mat-label {
+  color: #aaa;
+}
+
+.mat-select-value {
+  color: #fff;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0 !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.login-btn {
+  background-color: $main-color ;
+  color: #fff;
+}

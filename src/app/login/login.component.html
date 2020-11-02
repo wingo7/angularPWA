@@ -1,0 +1,31 @@
+<form class="login-form" [formGroup]="loginForm" autocomplete="off">
+    <mat-form-field class="full-width form-field">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Email" required autocomplete="off">
+      <mat-error *ngIf="formEmail.hasError('email')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="formEmail.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width form-field">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" placeholder="Password" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="formPassword.hasError('minlength')">
+          Please enter 6 or more characters
+        </mat-error>
+        <mat-error *ngIf="formPassword.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <a href="#" (click)="restorePassword()" class="forgot-password" color="primary">Forgot password?</a>
+      <button mat-raised-button class="full-width login-btn" type="submit" (click)="login()" >Login</button>
+      <div class="strike">
+        <span>OR</span>
+    </div>
+    <button mat-raised-button class="full-width login-btn" (click)="signInWithGoogle()">Sign in with Google</button>
+  </form>
