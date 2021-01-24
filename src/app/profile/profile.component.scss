@@ -6,7 +6,13 @@ align-items: center;
     label {
         display: inline-block;
     }
+
 }
+
+
+.mat-select-value {
+    color: #000 !important;
+  }
 
 .edit-icon {
     align-self: flex-end;
@@ -63,4 +69,9 @@ align-items: center;
 
 .edit-img-wrapper {
     position: relative;
+}
+
+.edit-info {
+    display: flex;
+    flex-direction: column;
 }

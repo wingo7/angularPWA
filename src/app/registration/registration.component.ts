@@ -3,12 +3,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {FirebaseService} from '../services/firebase.service';
 import {User} from '../models/user.model';
 import { AuthService } from '../services/auth.service';
-
-interface Gender {
-  value: string;
-  viewValue: string;
-}
-
+import {Gender} from '../models/gender.model';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
+import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import {User} from '../models/user.model';
 @Injectable({
@@ -30,11 +30,11 @@ export class FirebaseService {
     return this.afs.doc<User>(`users/${uid}`).valueChanges();
   }
 
-  uploadImage(file): AngularFireUploadTask {
+  uploadImage(file): AngularFireStorageReference {
     const filePath = 'myfilename';
     const ref = this.storage.ref(filePath);
     const task = ref.put(file);
-    return task;
+    return ref;
   }
 
 }

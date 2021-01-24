@@ -7,6 +7,7 @@
         <label>Name: {{user.displayName | titlecase}}</label>
         <label>Age: {{user.age ? user.age : 'Not set'}}</label>
         <label>Email: {{user.email}}</label>
+        <label>Gender: {{user.gender}}</label>
         <button mat-raised-button class="sign-out-btn" (click)="auth.signOut()">Sign out</button>
     </div>
     <ng-template #editForm>
@@ -23,6 +24,31 @@
                     <input type="file" #fileInput accept="image/*" class="upload-file" (change)="changeImg()">
                 </label>
             </div>
+            
+            <div class="edit-info">
+                
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" [value]="user.displayName">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Age</mat-label>
+                    <input type="number" matInput placeholder="Age" [value]="user.age ? user.age : 0">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width form-field">
+                    <mat-label>Gender</mat-label>
+                    <mat-select name="Gender">
+                      <mat-option *ngFor="let gender of genders" [value]="user.gender">
+                        {{gender.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+
+            <button mat-raised-button class="sign-out-btn" *ngIf="editable" (click)="saveChanges()">Save</button>
             <button mat-raised-button class="sign-out-btn" (click)="auth.signOut()">Sign out</button>
         </div>
     </ng-template>

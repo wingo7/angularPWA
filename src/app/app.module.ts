@@ -25,6 +25,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ToasterComponent } from './toaster/toaster.component';
 import { RestorePasswordComponent } from './restore-password/restore-password.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { RestorePasswordComponent } from './restore-password/restore-password.co
     WelcomeComponent,
     ProfileComponent,
     ToasterComponent,
-    RestorePasswordComponent
+    RestorePasswordComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
